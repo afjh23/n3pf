@@ -10,10 +10,10 @@ export const TodayDetails = () => {
   const {w_direction,w_speed,humidity,visibility,pressure} = firstData
 
     return (
-        <div className='mt-0 flex flex-col gap-8 sm:gap-4 xl:gap-8'>
-            <span className=' font-bold text-[24px]'>Today’s Hightlights</span>
-            <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 xl:gap-8'> 
-            <div className='w-80 h-52 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
+        <div className='mt-0 flex flex-col gap-8 sm:gap-2 2xl:gap-8'>
+            <span className=' font-bold text-2xl'>Today’s Hightlights</span>
+            <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 sm:gap-4 2xl:gap-8'> 
+            <div className='w-80 h-52 sm:h-44 2xl:h-52 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
                 <span>Wind status </span>
                 <div><span className='text-6xl font-bold'>{w_speed}</span><span className='text-4xl'>mph</span></div>
 
@@ -25,7 +25,7 @@ export const TodayDetails = () => {
                 </div>
 
             </div>
-            <div className='w-80 h-52 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
+            <div className='w-80 h-52 sm:h-44 2xl:h-52  bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
                 <span>Humidity</span>
                 <div><span className='text-6xl font-bold'>{humidity}</span><span className='text-4xl'>%</span></div>
 
@@ -45,12 +45,12 @@ export const TodayDetails = () => {
                 </div>
             </div>
 
-            <div className='w-80 h-40 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
+            <div className='w-80 h-40 sm:h-32 2xl:h-40 sm:p-4 2xl:p-8 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
                 <span>Visibility</span>
                 <div><span className='text-6xl font-bold'>{visibility}</span><span className='text-4xl'> miles</span></div>
 
             </div>
-            <div className='w-80 h-40 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
+            <div className='w-80 h-40 sm:h-32 2xl:h-40 sm:p-4 2xl:p-8 bg-[#1e213a] p-8 flex flex-col items-center place-content-between'>
                 <span>Air Pressure </span>
                 <div><span className='text-6xl font-bold'>{pressure}</span><span className='text-4xl'>mb</span></div>
 

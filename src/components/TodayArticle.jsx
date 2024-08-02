@@ -54,7 +54,7 @@ export default function TodayArticle() {
               </svg>
             </button>
           </div>
-          <div className=" h-80 relative">
+          <div className=" h-80 sm:h-60 2xl:h-80 relative">
             <img src={cloud} className='h-full object-cover opacity-10 animate-infinite' alt="Cloud background" />
             <img src={`/${icon}.png`} className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-36 h-36 object-fill' alt="Weather icon" />
           </div>
