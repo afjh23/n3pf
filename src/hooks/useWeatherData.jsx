@@ -17,13 +17,25 @@ export default function () {
     return text.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
   }
 
+  const filterByDay= (prev) => {
+    const prevUnique = {}
+    prev.forEach(x => {
+      const fecha = x.dt_txt.split(' ')[0]
+      if (!prevUnique[fecha]) {
+        prevUnique[fecha] = x
+      }
+    })
+    const filteredArray = Object.values(prevUnique)
+    return filteredArray
+  }
+
   const getData = async () => {
     let url
   
     if(coords && coords.lat && coords.lon){
-      url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&units=${unit}&cnt=6&appid=3cea8a3c304e739625437f7f41dd26c5`
+      url = `https://api.openweathermap.org/data/2.5/forecast?lat=${coords.lat}&lon=${coords.lon}&units=${unit}&cnt=40&appid=3cea8a3c304e739625437f7f41dd26c5`
     } else if (city){
-      url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&cnt=6&appid=3cea8a3c304e739625437f7f41dd26c5`
+      url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&cnt=40&appid=3cea8a3c304e739625437f7f41dd26c5`
     }
 
     /* `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&cnt=6&appid=3cea8a3c304e739625437f7f41dd26c5` */
@@ -33,12 +45,13 @@ export default function () {
       const data = await rs.json()
       setWeatherData(data.list)
       
-  
+      const sixDate = filterByDay(data.list)
       const dcity = data.city.name
       
-      const format = data.list.map(item => {
+      const format = sixDate.map((item, i) => {
+
         return {
-          date: formatDate(item.dt_txt),
+          date:  i===1?'Tomorrow':formatDate(item.dt_txt),
           temp: parseInt(item.main.temp),
           temp_min: Math.round(item.main.temp_min),
           temp_max: Math.round(item.main.temp_max),
@@ -53,8 +66,6 @@ export default function () {
   
         }
       })
-
-      console.log(format)
       /* console.log(format) */
       setFormattedData(format)
     }

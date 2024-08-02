@@ -10,7 +10,7 @@ export const UpcomingWeather = () => {
     const updatedData = formattedData ? formattedData.slice(1) : [];
 
   return (
-    <ul className='py-14 mx-auto  grid grid-cols-2 gap-8
+    <ul className='py-14 mx-auto sm:mt-4 2xl:mt-6  grid grid-cols-2 gap-8
     sm:flex sm:flex-row sm:p-0  sm:gap-4 lg:gap-6 xl:gap:8 '>
         {
             updatedData.map(x => 
