@@ -10,7 +10,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className=' flex flex-col xsm:flex-row xsm:w-screen xsm:max-w-full xsm:h-screen'>
+    <div className=' flex flex-col sm:flex-row sm:w-screen sm:max-w-full sm:h-screen'>
       <TodayArticle>
         
       </TodayArticle>

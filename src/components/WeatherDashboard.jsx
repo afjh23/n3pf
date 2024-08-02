@@ -8,11 +8,11 @@ export const WeatherDashboard = () => {
   const {unit,toggleUnit} = useTemperatureUnit()
   console.log(unit)
   return (
-    <main className='w-[375px] h-[1718px] bg-[#100E1D] font-PrincipalFont text-[#E7E7EB]
-    xsm:w-full xsm:h-full xsm:flex xsm:flex-col xsm:justify-center xsm:items-center xsm:gap-16'>
-      <div className='flex flex-row gap-2 font-bold text-[18px] w-full max-w-[722px] mb-4 justify-end'>
-        <button className={`w-[40px] h-[40px] rounded-full ${ unit === 'metric'? 'bg-[#E7E7EB] text-[#110E3C] pointer-events-none' : 'bg-[#585676]'} `} onClick={toggleUnit}>°C</button>
-        <button className={`w-[40px] h-[40px] rounded-full ${ unit === 'imperial'? 'bg-[#E7E7EB] text-[#110E3C] pointer-events-none' : 'bg-[#585676]'} `} onClick={toggleUnit}>°F</button>
+    <main className='w-screen h-[1718px] bg-[#100E1D] font-PrincipalFont text-[#E7E7EB] flex flex-col items-center
+    sm:w-full sm:h-screen sm:flex sm:flex-col sm:justify-center sm:items-center sm:gap-8 2xl:gap-16'>
+      <div className=' gap-2 font-bold text-lg w-full max-w-[722px] sm:mb-0 2xl:mb-4 justify-end hidden sm:flex sm:flex-row'>
+        <button className={`w-10 h-10 rounded-full ${ unit === 'metric'? 'bg-[#E7E7EB] text-[#110E3C] pointer-events-none' : 'bg-[#585676]'} `} onClick={toggleUnit}>°C</button>
+        <button className={`w-10 h-10] rounded-full ${ unit === 'imperial'? 'bg-[#E7E7EB] text-[#110E3C] pointer-events-none' : 'bg-[#585676]'} `} onClick={toggleUnit}>°F</button>
       </div>
         <UpcomingWeather></UpcomingWeather>
         <TodayDetails></TodayDetails>

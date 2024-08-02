@@ -10,8 +10,8 @@ export const UpcomingWeather = () => {
     const updatedData = formattedData ? formattedData.slice(1) : [];
 
   return (
-    <ul className='w-full p-[54px] grid grid-cols-2 gap-8
-    xsm:flex xsm:flex-row xsm:p-0 xsm:w-fit  '>
+    <ul className='py-14 mx-auto  grid grid-cols-2 gap-8
+    sm:flex sm:flex-row sm:p-0  sm:gap-4 lg:gap-6 xl:gap:8 '>
         {
             updatedData.map(x => 
                 <UpcomingCard data={x}></UpcomingCard>
